@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>THSE – Mentor Humanista</title>
+  <link rel="stylesheet" href="./css/app.css">
+  <script src="./vendor/html2canvas.min.js"></script>
+  <script src="./vendor/jspdf.umd.min.js"></script>
+  <script defer type="module" src="./js/app.js"></script>
+</head>
+<body>
+  <header class="wrap topbar no-print">
+    <h1>THSE – Mentor Humanista</h1>
+    <div class="flex">
+      <button id="btn-carregar" class="btn ghost">Carregar Protocolo master</button>
+      <button id="btn-pdf-direto" class="btn">Baixar PDF</button>
+    </div>
+  </header>
+  <main class="wrap grid">
+    <section class="card"><h2>1) Dados do paciente</h2>
+      <div class="grid2">
+        <label>Nome do paciente <input id="f-nome" type="text"></label>
+        <label>Queixa principal <input id="f-queixa" type="text"></label>
+      </div>
+      <div class="grid2">
+        <label>Intensidade (0–10) <input id="f-intensidade" type="number" min="0" max="10" value="6"></label>
+        <label>Quando piora? <input id="f-gatilho" type="text"></label>
+      </div>
+      <div class="grid2">
+        <label>Função do padrão
+          <select id="f-funcao">
+            <option value="alivio">Alívio rápido</option>
+            <option value="evitacao">Evitar conflito</option>
+            <option value="aprovacao">Buscar aprovação</option>
+            <option value="controle">Controlar/rigidez</option>
+          </select>
+        </label>
+        <label>Objetivo do paciente <input id="f-objetivo" type="text"></label>
+      </div>
+      <label>Preferências/limites (opcional) <input id="f-preferencias" type="text"></label>
+    </section>
+
+    <section class="card"><h2>2) Plano de ação — 4 semanas</h2>
+      <div id="plano-editor" class="plan"></div></section>
+
+    <section class="card"><h2>3) Diretrizes clínicas</h2>
+      <div id="guides" class="guides"></div></section>
+  </main>
+
+  <template id="tpl-print">
+    <div id="print-root" class="print-wrap">
+      <h2>Parecer Clínico – Mentor Humanista</h2>
+      <div class="meta">Data: <b id="meta-data"></b></div>
+      <div class="block"><h3>Dados do paciente</h3>
+        <div class="kv"><b>Nome:</b> <span id="p-nome"></span></div>
+        <div class="kv"><b>Queixa:</b> <span id="p-queixa"></span></div>
+        <div class="kv"><b>Objetivo:</b> <span id="p-objetivo"></span></div>
+        <div class="kv"><b>Intensidade (0–10):</b> <span id="p-intensidade"></span></div>
+        <div class="kv"><b>Quando piora?</b> <span id="p-gatilho"></span></div>
+        <div class="kv"><b>Função do padrão:</b> <span id="p-funcao"></span></div>
+        <div class="kv"><b>Preferências/limites:</b> <span id="p-pref"></span></div>
+      </div>
+      <div id="p-semanas"></div>
+    </div>
+  </template>
+</body>
+</html>

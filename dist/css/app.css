@@ -1,0 +1,34 @@
+:root{--ink:#0e2b2f;--mut:#517478;--line:#e7efef;--pri:#0e2b2f;--radius:16px}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:#fcfefe}
+.wrap{max-width:1024px;margin:0 auto;padding:18px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+h1{margin:6px 0;font-size:clamp(22px,3.4vw,30px)}
+h2{margin:0 0 10px 0;font-size:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,45,49,.06);padding:16px}
+.grid{display:grid;gap:14px}
+.grid2{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
+label{display:grid;gap:6px;font-size:14px}
+input,select,textarea{padding:12px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:#fff}
+.btn{appearance:none;border:1px solid var(--pri);background:var(--pri);color:#fff;font-weight:800;border-radius:12px;padding:12px 16px;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--pri)}
+.flex{display:flex;gap:12px;align-items:center}
+.footer{padding:8px 0 24px;color:var(--mut)}
+.guides{display:grid;gap:10px}
+.guide{border:1px dashed var(--line);border-radius:12px;padding:12px;background:#fff}
+.plan .week{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0}
+.plan h3{margin:0 0 6px 0;font-size:15px}
+.plan ul{margin:6px 0 0 18px}
+.plan li{margin:6px 0}
+.print-wrap{width:794px;padding:0 6px;background:#fff;color:#0e2b2f;font:13.4px/1.38 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.print-wrap h2{margin:0 0 6px;font-size:16px;font-weight:800}
+.print-wrap h3{margin:10px 0 6px;font-size:14px;font-weight:800}
+.print-wrap .meta{font-size:11.5px;margin:0 0 8px;color:#355c60}
+.print-wrap ul{margin:4px 0 0 16px;padding:0}
+.print-wrap li{margin:3px 0}
+.block{margin:10px 0 8px;padding-bottom:4px;border-bottom:1px solid #e6ecec}
+.table-like{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}
+.table-like .cell{border:1px solid #e6ecec;border-radius:8px;padding:8px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;margin:6px 0 4px}
+.kv b{white-space:nowrap}
